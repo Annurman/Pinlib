@@ -63,7 +63,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::delete('/borrowings/{borrowing}', [BorrowingController::class, 'destroy'])->name('borrowings.destroy');
 
 
-    Route::get('members/{id}/edit', [MemberController::class, 'edit'])->name('members.edit');
+    Route::resource('members', MemberController::class)->except(['edit']);
         Route::get('borrowings', [BorrowingController::class, 'index'])->name('borrowings.index');
     Route::resource('books', BookController::class);
 
