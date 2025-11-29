@@ -150,6 +150,11 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
+Route::get('/migrate-session', function () {
+    Artisan::call('session:table');
+    Artisan::call('migrate', ['--force' => true]);
+    return 'Session table created and migrated!';
+});
 
 Route::middleware('api')
     ->prefix('api')
