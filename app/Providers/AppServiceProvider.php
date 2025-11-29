@@ -29,14 +29,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot()
-    {
-        Broadcast::routes([
-            'middleware' => ['auth:web', 'auth:admin'],
-        ]);
-    
-        require base_path('routes/channels.php');
-    }
+
     
 
     
