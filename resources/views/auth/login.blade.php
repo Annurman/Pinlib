@@ -4,7 +4,7 @@
         <!-- Logo Pinlib -->
         <div class="flex justify-center">
             <a href="/">
-                <img src="{{ asset('storage/profile_pictures/logo-pinlib.png') }}" alt="Logo Pinlib" class="h-[170px] w-auto">
+                <img src="{{ asset('images/logo-pinlib.png') }}" alt="Logo Pinlib" class="h-[170px] w-auto">
             </a>
         </div>
 
