@@ -142,6 +142,16 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function () {
 | API + BROADCAST
 |--------------------------------------------------------------------------
 */
+Route::get('/dev-routes', function () {
+    return collect(\Route::getRoutes())->map(function ($r) {
+        return [
+            'uri' => $r->uri(),
+            'method' => $r->methods(),
+            'name' => $r->getName(),
+            'middleware' => $r->middleware(),
+        ];
+    });
+});
 
 Route::prefix('api')->middleware('api')->group(base_path('routes/api.php'));
 Broadcast::routes(['middleware' => ['auth']]);
